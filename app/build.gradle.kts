@@ -7,11 +7,25 @@ plugins {
 }
 
 dependencies {
+
+    // Runtime
+    implementation("io.ktor:ktor-server-core-jvm:3.0.0")
+    implementation("io.ktor:ktor-server-netty-jvm:3.0.0")
+    implementation("io.ktor:ktor-server-resources:3.0.0")
+    implementation("io.ktor:ktor-server-default-headers:3.0.0")
+    implementation("org.kodein.di:kodein-di-jvm:7.17.0")
     implementation("org.apache.commons:commons-text")
+
+    // Test
+    testImplementation("io.ktor:ktor-server-test-host:3.0.0")
+//    testImplementation("io.ktor:ktor-server-tests-jvm:3.0.0-beta-2")
+//    testImplementation("io.ktor:ktor-server-test-base:3.0.0")
+//    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+
     implementation(project(":utilities"))
 }
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.app.AppKt"
+    mainClass = "com.blocklollo.gateway.AppKt"
 }
